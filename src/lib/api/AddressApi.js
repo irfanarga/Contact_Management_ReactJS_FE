@@ -61,3 +61,16 @@ export const addressUpdate = async (
     }
   );
 };
+
+export const addressDelete = async (token, id, addressId) => {
+  return await fetch(
+    `${import.meta.env.VITE_API_PATH}/contacts/${id}/addresses/${addressId}`,
+    {
+      method: "DELETE",
+      headers: {
+        Accept: "application/json",
+        Authorization: token,
+      },
+    }
+  );
+};
